@@ -49,6 +49,14 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        encoder_msc_down_up: encoder_msc_down_up {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENCODER_MSC_DOWN_UP";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+            tap-ms = <20>;
+        };
     };
 
     keymap {
@@ -62,7 +70,7 @@
 &kp LG(F22)       &kp LCTRL  &kp LEFT_ALT  &mt LEFT_WIN F21  &lt 3 SPACE  &lt 5 F22    &kp TAB  &lt 4 ENTER                             &lt 6 ESCAPE
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+            sensor-bindings = <&encoder_msc_down_up>;
         };
 
         SCROLL {
