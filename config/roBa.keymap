@@ -57,8 +57,8 @@
         default_layer {
             bindings = <
 &kp Q             &kp W      &kp E         &kp R             &kp T                              &kp Y        &kp U  &kp I      &kp O    &kp P
-&kp A             &kp S      &kp D         &kp F             &kp G        &none        &none    &kp H        &kp J  &kp K      &kp L    &kp SEMICOLON
-&mt LEFT_SHIFT Z  &kp X      &kp C         &kp V             &kp B        &none        &none    &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
+&kp A             &kp S      &kp D         &kp F             &kp G        &kp LC(N5)   &none    &kp H        &kp J  &kp K      &kp L    &kp SEMICOLON
+&mt LEFT_SHIFT Z  &kp X      &kp C         &kp V             &kp B        &kp LC(N6)   &none    &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
 &kp LG(F22)       &kp LCTRL  &kp LEFT_ALT  &mt LEFT_WIN F21  &lt 3 SPACE  &lt 5 F22    &kp TAB  &lt 4 ENTER                             &lt 6 ESCAPE
             >;
 
@@ -94,7 +94,7 @@
 
         CURSOR {
             bindings = <
-&none             &none   &none   &kp LC(LA(LEFT))      &kp LC(LA(RIGHT))                        &kp PG_UP  &none     &kp UP    &none      &kp N5
+&none             &none   &none   &kp LC(LA(LEFT))      &kp LC(LA(RIGHT))                        &kp PG_UP  &none     &kp UP    &none      &kp LG(LS(N5))
 &kp LG(NUMBER_1)  &none   &none   &kp LC(LA(R))         &kp LC(LA(RET))        &none     &none   &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp LG(LEFT)
 &none             &none   &none   &kp LC(LA(LG(LEFT)))  &kp LC(LG(LA(RIGHT)))  &none     &none   &none      &none     &kp BSPC  &none      &kp LG(RIGHT)
 &trans            &trans  &trans  &trans                &kp LC(SPACE)          &trans    &trans  &trans                                    &trans
@@ -115,8 +115,8 @@
         BLUETOOTH {
             bindings = <
 &none   &none   &none   &none   &none                     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&none   &none   &none   &none   &none   &none     &none   &none         &none         &none         &none         &none
-&none   &none   &none   &none   &none   &none     &none   &none         &none         &none         &none         &none
+&none   &none   &none   &none   &none   &none     &none   &none         &none         &none         &none         &bt BT_CLR
+&none   &none   &none   &none   &none   &none     &none   &none         &none         &none         &none         &bt BT_CLR_ALL
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                                                  &trans
             >;
         };
