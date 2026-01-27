@@ -21,7 +21,7 @@ manifest:
       revision: main
     - name: prospector-zmk-module
       remote: prospector
-      revision: v2.1.0  # Use v2.0.0 for ZMK ≤0.3 (Zephyr 3.x)
+      revision: v2.0.0  # Use v2.0.0 for ZMK ≤0.3 (Zephyr 3.x)
       path: modules/prospector-zmk-module
   self:
     path: config
