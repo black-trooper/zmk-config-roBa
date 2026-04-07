@@ -1,7 +1,36 @@
 #include "roBa.dtsi"
+#include <input/processors.dtsi>
+#include <dt-bindings/zmk/input_transform.h>
 
 &kscan0 {
     col-gpios
         = <&gpio0 2 GPIO_ACTIVE_HIGH>
         ;
+};
+
+/ {
+    zip_temp_layer: zip_temp_layer {
+        compatible = "zmk,input-processor-temp-layer";
+        #input-processor-cells = <2>;
+        excluded-positions = <
+            17 // H
+            18 // J
+            19 // K
+            20 // L
+            22 // Z
+        >;
+    };
+};
+
+&trackball_listener {
+    status = "okay";
+
+    input-processors = <&zip_temp_layer 2 10000>;
+
+    scroller {
+        layers = <1>;
+        input-processors =
+            <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>,
+            <&zip_xy_to_scroll_mapper>;
+    };
 };
