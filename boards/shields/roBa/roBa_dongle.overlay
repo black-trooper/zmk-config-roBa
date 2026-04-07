@@ -2,10 +2,17 @@
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
-&kscan0 {
-    col-gpios
-        = <&gpio0 2 GPIO_ACTIVE_HIGH>
-        ;
+/ {
+    mock_kscan: mock_kscan {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
+};
+
+&roba_physical_layout {
+    kscan = <&mock_kscan>;
 };
 
 / {
