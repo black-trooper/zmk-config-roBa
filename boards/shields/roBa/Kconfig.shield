@@ -3,3 +3,6 @@ config SHIELD_ROBA_R
 
 config SHIELD_ROBA_L
     def_bool $(shields_list_contains,roBa_L)
+
+config SHIELD_ROBA_DONGLE
+    def_bool $(shields_list_contains,roBa_dongle)
