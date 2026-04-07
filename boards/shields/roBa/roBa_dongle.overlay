@@ -4,11 +4,25 @@
 #include <dt-bindings/zmk/input_transform.h>
 
 / {
-    mock_kscan: mock_kscan {
-        compatible = "zmk,kscan-mock";
-        columns = <0>;
-        rows = <0>;
-        events = <0>;
+    kscan_charlie: kscan_charlie {
+        compatible = "zmk,kscan-gpio-charlieplex";
+        wakeup-source;
+        gpios
+            = <&xiao_d 2 GPIO_ACTIVE_HIGH>
+            , <&xiao_d 4 GPIO_ACTIVE_HIGH>
+            , <&xiao_d 5 GPIO_ACTIVE_HIGH>
+            ;
+    };
+
+    kscan_dongle: kscan_dongle {
+        compatible = "zmk,kscan-composite";
+        rows = <7>;
+        columns = <11>;
+
+        charlieplex {
+            kscan = <&kscan_charlie>;
+            row-offset = <4>;
+        };
     };
 };
 
@@ -16,8 +30,12 @@
     status = "disabled";
 };
 
+&dongle_encoder {
+    status = "okay";
+};
+
 &roba_physical_layout {
-    kscan = <&mock_kscan>;
+    kscan = <&kscan_dongle>;
 };
 
 / {

@@ -11,17 +11,6 @@
 };
 
 &trackball {
-    // arrows {
-    //     layers = <3>;
-    //     bindings =
-    //         <&kp RIGHT_ARROW>,
-    //         <&kp LEFT_ARROW>,
-    //         <&kp UP_ARROW>,
-    //         <&kp DOWN_ARROW>;
-    //     tick = <10>;
-    //     wait-ms = <5>;
-    //     tap-ms = <5>;
-    // };
 };
 
 / {
@@ -65,9 +54,10 @@
 &kp A             &kp S      &kp D         &kp F               &kp G        &kp LC(N5)       &none    &kp H        &kp J  &kp K      &kp L    &kp SEMICOLON
 &mt LEFT_SHIFT Z  &kp X      &kp C         &kp V               &kp B        &kp LC(N6)       &none    &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
 &kp LG(F22)       &kp LCTRL  &kp LEFT_ALT  &mt LEFT_WIN LANG2  &lt 3 SPACE  &lt 5 LANG1      &kp TAB  &lt 4 ENTER                             &lt 6 ESCAPE
+&none  &none  &none  &none  &none  &none
             >;
 
-            sensor-bindings = <&encoder_msc_down_up>;
+            sensor-bindings = <&encoder_msc_down_up>, <&inc_dec_kp 0 0>, <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
         SCROLL {
@@ -76,6 +66,7 @@
 &none   &none   &none   &none  &none   &none       &none   &none   &none  &to 0  &none  &none
 &none   &none   &none   &none  &none   &none       &none   &none   &none  &none  &none  &none
 &trans  &trans  &trans  &to 0  &trans  &trans      &trans  &trans                       &to 0
+&none  &none  &none  &none  &none  &none
             >;
         };
 
@@ -85,6 +76,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &mkp MB3  &mkp MB1  &to 1   &mkp MB2  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans    &trans    &trans  &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
+&none  &none  &none  &none  &none  &none
             >;
         };
 
@@ -94,6 +86,7 @@
 &kp GRAVE     &kp TILDE   &kp LS(UNDER)  &kp SQT       &kp LS(DQT)    &none       &none   &kp LS(PLUS)   &kp MINUS     &kp LS(LPAR)  &kp LS(RPAR)  &kp LS(PIPE)
 &none         &none       &none          &none         &none          &none       &none   &kp LS(STAR)   &kp EQUAL     &kp LBKT      &kp RBKT      &kp BSLH
 &none         &trans      &trans         &trans        &trans         &trans      &trans  &trans                                                   &trans
+&none  &none  &none  &none  &none  &none
             >;
         };
 
@@ -103,9 +96,10 @@
 &kp LG(NUMBER_1)  &none   &none   &kp LC(LA(R))         &kp LC(LA(RET))        &none       &none   &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp LG(LEFT)
 &none             &none   &none   &kp LC(LA(LG(LEFT)))  &kp LC(LG(LA(RIGHT)))  &none       &none   &none      &none     &kp BSPC  &none      &kp LG(RIGHT)
 &trans            &trans  &trans  &trans                &kp LC(SPACE)          &trans      &trans  &trans                                    &trans
+&none  &none  &none  &none  &none  &none
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
+            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>, <&inc_dec_kp 0 0>, <&inc_dec_kp 0 0>;
         };
 
         NUMBER {
@@ -114,6 +108,7 @@
 &kp N1   &kp N2   &kp N3  &kp N4  &kp N5  &none       &none   &kp N6  &kp N7  &kp N8  &kp N9  &kp N0
 &kp F11  &kp F12  &none   &none   &none   &none       &none   &none   &none   &none   &none   &none
 &trans   &trans   &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&none  &none  &none  &none  &none  &none
             >;
         };
 
@@ -123,6 +118,7 @@
 &none   &none   &none   &none   &none   &none       &none   &none         &none         &none         &none         &bt BT_CLR
 &none   &none   &none   &none   &none   &none       &none   &none         &none         &none         &none         &bt BT_CLR_ALL
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                                  &trans
+&none  &none  &none  &none  &none  &none
             >;
         };
     };
