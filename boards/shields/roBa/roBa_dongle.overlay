@@ -1,4 +1,5 @@
 #include "roBa.dtsi"
+#include "roBa_trackball.dtsi"
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
 
@@ -9,6 +10,10 @@
         rows = <0>;
         events = <0>;
     };
+};
+
+&kscan0 {
+    status = "disabled";
 };
 
 &roba_physical_layout {
